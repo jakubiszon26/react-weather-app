@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Degrees = ({ temp, cityName }) => {
+const Degrees = ({ temp, cityName, countryCode }) => {
   const [isFarenheit, setIsFarenheit] = useState(false);
 
   return (
@@ -12,6 +12,7 @@ const Degrees = ({ temp, cityName }) => {
           : Math.round(temp - 273.15)}
         °
       </span>
+      <span>{countryCode}</span>
     </>
   );
 };
