@@ -17,10 +17,14 @@ function App() {
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_API_KEY}`
       )
       .then((response) => {
+        console.log(response.status);
         console.log(response);
         setTemp(response.data.main.temp);
         setCityName(response.data.name);
         setWeather(response.data.weather[0].main);
+      })
+      .catch((error) => {
+        setCityName(error.response.data.message);
       });
   }, [city]);
 
