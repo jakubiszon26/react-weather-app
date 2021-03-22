@@ -1,8 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;1,400&display=swap');
-body{
-  background: #111;
-}
-.dashboard {
+
+.container {
   width: 80%;
   height: 80%;
   position: absolute;
@@ -10,5 +7,4 @@ body{
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-family: 'Montserrat', sans-serif;
 }
