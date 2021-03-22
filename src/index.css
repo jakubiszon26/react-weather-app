@@ -1,14 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;1,400&display=swap');
-body{
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;1,100;1,200;1,300;1,400&display=swap");
+body {
   background: #111;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: white;
 }
-.degrees{
+.degrees {
   text-transform: uppercase;
   font-size: 50px;
 }
-.weather-img{
+.weather-img {
   width: 50px;
   height: 50px;
+}
+.city-input,
+.city-input:focus {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  border-bottom: 1px white solid;
+  font-size: 22px;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 100;
+  font-style: italic;
 }

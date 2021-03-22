@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CityInput({ setCity }) {
   return (
-    <input
+    <input className="city-input"
       onChange={(e) => {
         let handler;
         clearTimeout(handler);

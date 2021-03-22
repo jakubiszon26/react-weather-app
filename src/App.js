@@ -4,7 +4,7 @@ import Degrees from "./components/Degrees";
 import axios from "axios";
 import "./App.css";
 import CityInput from "./components/CityInput";
-import WeatherImg from "./components/WeatherImg"
+import WeatherImg from "./components/WeatherImg";
 function App() {
   const [city, setCity] = useState("Gdańsk");
   const [temp, setTemp] = useState(270);
@@ -32,7 +32,6 @@ function App() {
         <Degrees cityName={cityName} temp={temp} />
         <WeatherImg weather={weather} />
         <CityInput setCity={setCity} />
-        
       </div>
     </>
   );
