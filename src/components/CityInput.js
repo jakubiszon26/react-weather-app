@@ -1,15 +1,11 @@
-import React from "react";
+import debounce from "lodash.debounce";
+import React, { useCallback } from "react";
 
 export default function CityInput({ setCity }) {
-  return (
-    <input className="city-input"
-      onChange={(e) => {
-        let handler;
-        clearTimeout(handler);
-        handler = setTimeout(() => {
-          setCity(e.target.value);
-        }, 3000);
-      }}
-    />
+  const debouncedInput = useCallback(
+    debounce((e) => setCity(e.target.value), 500),
+    [setCity]
   );
+
+  return <input className="city-input" onChange={debouncedInput} />;
 }
