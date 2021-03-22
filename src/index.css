@@ -29,3 +29,18 @@ body {
   font-weight: 100;
   font-style: italic;
 }
+.github-link:link, .github-link:visited, .github-link:active{
+  color: white;
+}
+.github-image{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  border-radius: 100px;
+}
+@media only screen and (max-width: 800px) {
+  .city-input {
+    top: 50%;
+  }
+}

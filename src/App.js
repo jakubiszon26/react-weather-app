@@ -12,7 +12,6 @@ function App() {
   const [weather, setWeather] = useState("Clear");
   const [countryCode, setCountryCode] = useState("Clear");
 
-
   useEffect(() => {
     axios
       .get(
@@ -40,6 +39,12 @@ function App() {
         <WeatherImg weather={weather} />
         <CityInput setCity={setCity} />
       </div>
+      <a
+        className="github-link"
+        href="https://github.com/jakubiszon26/react-weather-app"
+      >
+        <img className="github-image" src="github.svg" alt="github" />
+      </a>
     </>
   );
 }
