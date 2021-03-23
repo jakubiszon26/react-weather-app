@@ -62,6 +62,8 @@ function App() {
       <a
         className="github-link"
         href="https://github.com/jakubiszon26/react-weather-app"
+        target="_blank"
+        rel="noreferrer"
       >
         <img className="github-image" src="github.svg" alt="github" />
       </a>

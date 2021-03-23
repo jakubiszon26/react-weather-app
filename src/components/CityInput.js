@@ -7,7 +7,6 @@ export default function CityInput({ setCity }) {
     debounce((e) => setCity(e.target.value), 1000),
     [setCity]
   );
-
   return (
     <input
       className="city-input"
