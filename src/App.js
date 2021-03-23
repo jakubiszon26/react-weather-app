@@ -6,7 +6,7 @@ import "./App.css";
 import CityInput from "./components/CityInput";
 import WeatherImg from "./components/WeatherImg";
 function App() {
-  const [city, setCity] = useState("Gdańsk");
+  const [city, setCity] = useState(localStorage.getItem("lastCity"));
   const [temp, setTemp] = useState(270);
   const [cityName, setCityName] = useState("Gdansk");
   const [weather, setWeather] = useState("Clear");
@@ -26,6 +26,7 @@ function App() {
         setWeather(response.data.weather[0].main);
         setCountryCode(response.data.sys.country);
         setWeatherDescription(response.data.weather[0].description);
+        localStorage.setItem("lastCity", response.data.name)
       })
       .catch((error) => {
         setCityName(error.response.data.message);
