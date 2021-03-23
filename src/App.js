@@ -1,17 +1,35 @@
-import React, { useEffect, useState } from "react";
-import Particles from "react-particles-js";
+import React, { useEffect, useState, useRef } from "react";
 import Degrees from "./components/Degrees";
 import axios from "axios";
 import "./App.css";
 import CityInput from "./components/CityInput";
 import WeatherImg from "./components/WeatherImg";
+import GLOBE from "vanta/dist/vanta.globe.min.js";
+
 function App() {
+  const [vantaEffect, setVantaEffect] = useState(0);
+  const myRef = useRef(null);
   const [city, setCity] = useState(localStorage.getItem("lastCity"));
   const [temp, setTemp] = useState(270);
   const [cityName, setCityName] = useState("Gdansk");
   const [weather, setWeather] = useState("Clear");
-  const [countryCode, setCountryCode] = useState("Clear");
-  const [weatherDescription, setWeatherDescription] = useState("Clear sky")
+  const [countryCode, setCountryCode] = useState("PL");
+  const [weatherDescription, setWeatherDescription] = useState("Clear sky");
+
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(
+        GLOBE({
+          el: myRef.current,
+          color: 0x5593db,
+          backgroundColor: "0x0",
+        })
+      );
+    }
+    return () => {
+      if (vantaEffect) vantaEffect.destroy();
+    };
+  }, [vantaEffect]);
 
   useEffect(() => {
     axios
@@ -26,7 +44,7 @@ function App() {
         setWeather(response.data.weather[0].main);
         setCountryCode(response.data.sys.country);
         setWeatherDescription(response.data.weather[0].description);
-        localStorage.setItem("lastCity", response.data.name)
+        localStorage.setItem("lastCity", response.data.name);
       })
       .catch((error) => {
         setCityName(error.response.data.message);
@@ -34,9 +52,8 @@ function App() {
   }, [city]);
 
   return (
-    <>
+    <div className="vanta-container" ref={myRef}>
       {/*  this Particles only for now, later i will make them myself */}
-      <Particles />
       <div className="container">
         <Degrees cityName={cityName} temp={temp} countryCode={countryCode} />
         <WeatherImg weatherDescription={weatherDescription} weather={weather} />
@@ -48,7 +65,7 @@ function App() {
       >
         <img className="github-image" src="github.svg" alt="github" />
       </a>
-    </>
+    </div>
   );
 }
 

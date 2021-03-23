@@ -29,6 +29,11 @@ body {
   font-weight: 100;
   font-style: italic;
 }
+
+.city-input::placeholder{
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.2)
+}
 .github-link:link, .github-link:visited, .github-link:active{
   color: white;
 }
@@ -43,4 +48,9 @@ body {
   .city-input {
     top: 50%;
   }
+}
+
+.vanta-container{
+  height: 100vh;
+  width: 100vw;
 }
