@@ -30,14 +30,16 @@ body {
   font-style: italic;
 }
 
-.city-input::placeholder{
+.city-input::placeholder {
   font-weight: 100;
-  color: rgba(255, 255, 255, 0.2)
+  color: rgba(255, 255, 255, 0.2);
 }
-.github-link:link, .github-link:visited, .github-link:active{
+.github-link:link,
+.github-link:visited,
+.github-link:active {
   color: white;
 }
-.github-image{
+.github-image {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -50,7 +52,7 @@ body {
   }
 }
 
-.vanta-container{
-  height: 100vh;
-  width: 100vw;
+.vanta-container {
+  height: 98vh;
+  width: 99vw;
 }

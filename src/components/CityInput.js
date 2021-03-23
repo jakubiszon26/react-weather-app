@@ -8,5 +8,11 @@ export default function CityInput({ setCity }) {
     [setCity]
   );
 
-  return <input className="city-input" placeholder="Search for city"  onChange={debouncedInput} />;
+  return (
+    <input
+      className="city-input"
+      placeholder="Search for city"
+      onChange={debouncedInput}
+    />
+  );
 }
