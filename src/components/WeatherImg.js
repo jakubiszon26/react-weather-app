@@ -1,5 +1,5 @@
-export default function weatherImg({ weather }) {
+export default function weatherImg({ weather, weatherDescription }) {
   return (
-    <img className="weather-img" src={`${weather}.svg`} alt="weather img" />
+    <img title={weatherDescription} className="weather-img" src={`${weather}.svg`} alt="weather img" />
   );
 }

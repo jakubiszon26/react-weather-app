@@ -6,7 +6,7 @@ const Degrees = ({ temp, cityName, countryCode }) => {
   return (
     <>
       <h1>{cityName}</h1>
-      <span onClick={() => setIsFarenheit(!isFarenheit)} className="degrees">
+      <span title={isFarenheit ? "Farenheit" : "Celsius"} onClick={() => setIsFarenheit(!isFarenheit)} className="degrees">
         {isFarenheit
           ? Math.round(1.8 * (temp - 273) + 32)
           : Math.round(temp - 273.15)}

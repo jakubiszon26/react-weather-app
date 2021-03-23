@@ -11,6 +11,7 @@ function App() {
   const [cityName, setCityName] = useState("Gdansk");
   const [weather, setWeather] = useState("Clear");
   const [countryCode, setCountryCode] = useState("Clear");
+  const [weatherDescription, setWeatherDescription] = useState("Clear sky")
 
   useEffect(() => {
     axios
@@ -24,6 +25,7 @@ function App() {
         setCityName(response.data.name);
         setWeather(response.data.weather[0].main);
         setCountryCode(response.data.sys.country);
+        setWeatherDescription(response.data.weather[0].description);
       })
       .catch((error) => {
         setCityName(error.response.data.message);
@@ -36,7 +38,7 @@ function App() {
       <Particles />
       <div className="container">
         <Degrees cityName={cityName} temp={temp} countryCode={countryCode} />
-        <WeatherImg weather={weather} />
+        <WeatherImg weatherDescription={weatherDescription} weather={weather} />
         <CityInput setCity={setCity} />
       </div>
       <a
